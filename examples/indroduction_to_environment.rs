@@ -13,10 +13,15 @@ struct HttpBin {
 struct Environment {
     date: Box<dyn Fn() -> DateTime<Local>>,
     http_bin: Box<dyn Fn(String) -> Pin<Box<dyn Future<Output = Result<HttpBin, reqwest::Error>>>>>,
+    // .
+    // .
+    // .
+    // .
+    // other dependencies 
 }
 
 impl Environment {
-    fn new() -> Self {
+    fn prod() -> Self {
         let client = Client::new();
 
         Self {
@@ -65,7 +70,7 @@ impl Environment {
 
 #[tokio::main]
 async fn main()  {
-    let env = Environment::new();
+    let env = Environment::prod();
     (env.http_bin)("https://httpbin.org/get".to_string()).await.unwrap();
     println!(
         "Hello, world! at {}",
