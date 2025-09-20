@@ -8,7 +8,7 @@ description = "A rust dependency management library inspired by SwiftUI's enviro
 repository = "https://github.com/codefonsi/rust-dependencies"
 homepage = "https://github.com/codefonsi/rust-dependencies"
 documentation = "https://docs.rs/rust-dependencies"
-keywords = ["keypaths", "EnumKeyPath", "type-safe", "WritableKeyPath", "ReadableKeyPath"]
+keywords = ["dependencies", "dependency", "type-safe"]
 readme = "./README.md"
 include = ["src/**/*", "Cargo.toml", "../../README.md", "LICENSE"]
 
